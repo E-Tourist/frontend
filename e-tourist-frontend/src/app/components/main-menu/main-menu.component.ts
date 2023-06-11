@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-main-menu',
@@ -8,4 +9,21 @@ import {Component, Input} from '@angular/core';
 export class MainMenuComponent {
   @Input()
   isLoggedIn: boolean = false;
+
+  constructor(private router: Router) {
+  }
+
+  goToSearchComponent() {
+    this.router.navigate(['/search']);
+  }
+
+  goToListComponent() {
+    this.router.navigate(['/list']);
+  }
+
+  goToProfileComponent() {
+    let navigationRoute = this.isLoggedIn ? "/profile" : "/login";
+
+    this.router.navigate([navigationRoute]);
+  }
 }

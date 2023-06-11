@@ -1,7 +1,7 @@
 <header>E-Turysta</header>
 
 <div id="menu-body">
-  <button id="main-menu-search-button">Wyszukaj</button>
-  <button id="main-menu-list-button">Lista tras</button>
-  <button id="main-menu-account-button" *ngIf="isLoggedIn">Moje konto</button>
+  <button (click)="goToSearchComponent()" id="main-menu-search-button">Wyszukaj</button>
+  <button (click)="goToListComponent()" id="main-menu-list-button">Lista tras</button>
+  <button (click)="goToProfileComponent()" id="main-menu-account-button">Moje konto</button>
 </div>
