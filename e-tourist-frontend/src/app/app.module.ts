@@ -11,6 +11,7 @@ import { CommonComponentComponent } from './components/common-component/common-c
 import { RoutesSearchComponent } from './components/routes-search/routes-search.component';
 import { RoutesListComponent } from './components/routes-list/routes-list.component';
 import { ProfileComponent } from './components/account/profile/profile.component';
+import {NgOptimizedImage} from "@angular/common";
 
 const routes: Routes = [
   {
@@ -46,7 +47,8 @@ const routes: Routes = [
     BrowserModule,
     RouterOutlet,
     RouterLink,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    NgOptimizedImage
   ],
   exports: [RouterModule],
   providers: [],

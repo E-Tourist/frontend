@@ -8,7 +8,7 @@ import {Router} from "@angular/router";
 })
 export class MainMenuComponent {
   @Input()
-  isLoggedIn: boolean = false;
+  isLoggedIn: boolean = true;
 
   constructor(private router: Router) {
   }
