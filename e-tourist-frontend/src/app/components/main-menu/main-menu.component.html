@@ -1,7 +1,36 @@
 <header>E-Turysta</header>
 
 <div id="menu-body">
-  <button (click)="goToSearchComponent()" id="main-menu-search-button">Wyszukaj</button>
-  <button (click)="goToListComponent()" id="main-menu-list-button">Lista tras</button>
-  <button (click)="goToProfileComponent()" id="main-menu-account-button">Moje konto</button>
+  <button (click)="goToSearchComponent()" id="main-menu-search-button"  style="background-image: url(assets/main-menu/Search.png);">
+    Wyszukaj
+  </button>
+  <button (click)="goToListComponent()" id="main-menu-list-button" style="background-image: url(assets/main-menu/List.png);">
+    Lista tras
+  </button>
+  <button (click)="goToProfileComponent()" id="main-menu-account-button"  style="background-image: url(assets/main-menu/Profile.png);">
+    Moje konto
+  </button>
 </div>
+
+<div class="interactive-menu">
+  <div class="button-menu button-menu1"></div>
+      <svg class="button-menu button-menu1" height="16" width="16" viewBox="0 0 16 16" onclick="document.querySelector('.interactive-menu').classList.toggle('active')">
+        <circle class="arrow-background" r="12" cx="12" cy="12" />
+        <path class="arrow" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+      </svg>
+      <div class="interactive-menu-content" onclick="document.querySelector('.interactive-menu').classList.remove('active')">
+        <div class="option">
+          
+        </div>
+        <div class="option">
+          
+        </div>
+        <div class="option">
+          
+        </div>
+        <div class="option">
+          
+        </div>
+      </div>
+</div>
+
