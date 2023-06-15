@@ -12,31 +12,60 @@ header {
 }
 
 #menu-body {
-  display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: @theme-light-blue;
+  align-items: center;
+  display: flex;
 }
 
-button {
-	color: white;
-  -webkit-text-stroke-color: black;
-  -webkit-text-stroke-width: 0.2vw;
-  padding: 0;
-	border: none;
-  font-family: inherit;
-	cursor: pointer;
-	outline: inherit;
-  width: 100%;
-  height: calc(0.3 * 100vw);
-  background-size: 100%;
-  background-repeat: no-repeat;
-  font-size: 12vw;
-  background-color: transparent;
+body:before{
+  content:'';
+  height:100%;
+  display:inline-block;
+  vertical-align:middle;
 }
 
+button{
+  border: 5vw solid black;
+  background: rgb(59,153,157);
+  color:#fff;
+  border:none;
+  position:relative;
+  height:20vw;
+  width:100%;
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+button:hover{
+  background:#fff;
+  color:#1AAB8A;
+}
+button:before,button:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+button:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+button:hover:before,button:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
 
-// Arrow menu styling
+/* Arrow menu styling
+
 .interactive-menu{
   align-items: center;
   display: flex;
@@ -122,3 +151,4 @@ button {
 .active .interactive-menu-content {
   transform: translateY(0);
 }
+*/
