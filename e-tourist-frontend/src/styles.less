@@ -1,6 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'colors.less';
 
+html {
+  background-color: @theme-dark-blue;
+  overflow: hidden;
+  font-family: Inter;
+}
+
 body {
   margin: 0px;
 }
@@ -8,9 +14,4 @@ body {
 .form-control {
   display: flex;
   flex-direction: column;
-}
-
-html {
-  background-color: @theme-dark-blue;
-  overflow: hidden;
 }

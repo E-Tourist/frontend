@@ -1,11 +1,27 @@
-<nav></nav>
-<div class="routes-search"></div>
-<div class="routes-filters"></div>
+<div class="routes-options">
+    <div class="search-field">
+        <button class="filter"><i class="fa-solid fa-filter"></i></button>
+        <input type="text" name="search" placeholder="Search.."> 
+        <button class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+    <div class="routes-order">
+        <button class="order-type"><i class="fa-solid fa-arrow-up-wide-short"></i></button> <!-- class="fa-solid fa-arrow-down-short-wide" for fliped arrows  -->
+        <button class="order-by"><i class="fa-solid fa-arrow-down"></i></button>
+        <a class="order-by-name">Ocena</a>
+    </div>
+</div>
 
 <div class="routes-list">
     <div class="route-article">
-        <p class="route-name">Test name</p>
-        <p class="route-score">Test score</p>
+        <p class="route-name">Route name <a class="route-length">[10km]</a></p>
+        <p class="route-score">
+            <a class="route-score-avarage" id="gold">4.1</a>
+            <i class="fa-solid fa-star" id="gold"></i>
+            <i class="fa-solid fa-star" id="gold"></i>
+            <i class="fa-solid fa-star" id="gold"></i>
+            <i class="fa-solid fa-star" id="gold"></i>
+            <i class="fa-solid fa-star"></i>
+        </p>
         <img src="assets/routes-list/route-image.png" class="route-image">
     </div>
 </div>

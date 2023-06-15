@@ -1,4 +1,20 @@
+@import 'src/colors.less';
+
 header {
   display: flex;
   justify-content: space-between;
+  background-color: @theme-darker-blue;
+}
+
+.nav-btn {
+  background-color: transparent;
+  border: none; 
+  color: white;
+  padding: 12px 16px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.nav-btn:hover {
+  background-color: @theme-light-blue;
 }
