@@ -2,9 +2,9 @@
   <div>
     <a routerLink="/">MENU</a>
   </div>
-  <div>
-    <button>PROFILE</button>
-    <button>SETTINGS</button>
+  <div *ngIf="isLoggedIn">
+    <button routerLink="/profile">PROFILE</button>
+    <button routerLink="/settings">SETTINGS</button>
   </div>
 </header>
 <router-outlet></router-outlet>

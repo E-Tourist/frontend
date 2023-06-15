@@ -1,0 +1,32 @@
+<h2>Ustawienia:</h2>
+
+<form>
+  <div class="settings-avatar-change-section">
+    <img src="{{user.avatarUrl}}}" alt="avatar">
+    <div><input type="file"></div>
+  </div>
+
+  <div class="form-control">
+    <label>Nazwa użytkownika:</label>
+    <input type="text" id="create-account-username-input">
+  </div>
+
+  <div class="form-control">
+    <label>email:</label>
+    <input type="text" id="account-settings-email-input">
+  </div>
+
+  <div class="form-control">
+    <label>bio:</label>
+    <textarea id="account-settings-bio-input" rows="4"></textarea>
+  </div>
+
+  <div>
+    <label>Newsletter</label>
+    <input type="checkbox" id="account-settings-newsletter-input">
+  </div>
+
+  <button routerLink="/profile">Zapisz zmiany</button>
+</form>
+
+<button routerLink="/" (click)="logOut()">Wyloguj</button>
