@@ -28,5 +28,6 @@ export class FriendsComponent {
 
   ngOnInit() {
     this.user = this.userService.getUserById(1);
+    this.friends = this.userService.getUserFriends(1);
   }
 }
