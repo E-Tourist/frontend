@@ -16,6 +16,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { SettingsComponent } from './components/account/settings/settings.component';
 import { FriendsComponent } from './components/account/friends/friends.component';
 import { FriendProfileBoxComponent } from './components/account/friend-profile-box/friend-profile-box.component';
+import { RouteListSingleRouteComponent } from './components/route-list-single-route/route-list-single-route.component';
 
 const routes: Routes = [
   {
@@ -50,7 +51,8 @@ const routes: Routes = [
     ProfileComponent,
     SettingsComponent,
     FriendsComponent,
-    FriendProfileBoxComponent
+    FriendProfileBoxComponent,
+    RouteListSingleRouteComponent
   ],
     imports: [
         BrowserModule,
