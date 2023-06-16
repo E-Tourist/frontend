@@ -2,9 +2,9 @@
   <div>
     <button class="nav-btn" routerLink="/"><i class="fa fa-home"> E-Turysta</i></button>
   </div>
-  <div>
-    <button class="nav-btn"><i class="fa-solid fa-user"></i></button>
-    <button class="nav-btn"><i class="fa-sharp fa-solid fa-gear"></i></button>
+  <div *ngIf="isLoggedIn">
+    <button class="nav-btn" routerLink="/profile"><i class="fa-solid fa-user"></i></button>
+    <button class="nav-btn" routerLink="/settings"><i class="fa-sharp fa-solid fa-gear"></i></button>
   </div>
 </header>
 <router-outlet></router-outlet>
