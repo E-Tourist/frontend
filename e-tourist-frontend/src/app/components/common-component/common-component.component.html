@@ -1,10 +1,10 @@
 <header>
   <div>
-    <a routerLink="/">MENU</a>
+    <button class="nav-btn" routerLink="/"><i class="fa fa-home"> E-Turysta</i></button>
   </div>
   <div *ngIf="isLoggedIn">
-    <button routerLink="/profile">PROFILE</button>
-    <button routerLink="/settings">SETTINGS</button>
+    <button class="nav-btn" routerLink="/profile"><i class="fa-solid fa-user"></i></button>
+    <button class="nav-btn" routerLink="/settings"><i class="fa-sharp fa-solid fa-gear"></i></button>
   </div>
 </header>
 <router-outlet></router-outlet>
