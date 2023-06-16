@@ -1,0 +1,5 @@
+<app-friend-profile-box [user]="user"></app-friend-profile-box>
+
+<h3>Znajomi:</h3>
+
+<app-friend-profile-box *ngFor="let friend of friends" [user]="friend"></app-friend-profile-box>

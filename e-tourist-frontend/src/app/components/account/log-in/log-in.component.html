@@ -1,14 +1,14 @@
 <h2>Zaloguj się!</h2>
 
-<form id="log-in-form">
+<form id="log-in-form" [formGroup]="loginForm">
   <div class="form-control">
     <label>Wprowadź nazwę użytkownika lub adres e-mail:</label>
-    <input type="text" id="log-in-username-input">
+    <input type="text" id="log-in-username-input" formControlName="username">
   </div>
 
   <div class="form-control">
     <label>Wprowadź hasło:</label>
-    <input type="password" id="log-in-password-input">
+    <input type="password" id="log-in-password-input" formControlName="password">
   </div>
 
   <div id="log-in-additional-options">
@@ -22,10 +22,10 @@
   </div>
 
   <div id="log-in-oauth-buttons">
-    <button>Zaloguj przy pomocy Google</button>
-    <button>Facebook</button>
-    <button>AppleID</button>
+    <button routerLink="/" (click)="logInWithOauth()">Zaloguj przy pomocy Google</button>
+    <button routerLink="/" (click)="logInWithOauth()">Facebook</button>
+    <button routerLink="/" (click)="logInWithOauth()">AppleID</button>
   </div>
 
-  <button>Zaloguj</button>
+  <button (click)="logInWithCredentials()">Zaloguj</button>
 </form>
