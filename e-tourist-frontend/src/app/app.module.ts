@@ -16,6 +16,8 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { SettingsComponent } from './components/account/settings/settings.component';
 import { FriendsComponent } from './components/account/friends/friends.component';
 import { FriendProfileBoxComponent } from './components/account/friend-profile-box/friend-profile-box.component';
+import { RouteListSingleRouteComponent } from './components/route-list-single-route/route-list-single-route.component';
+import { RouteDetailsComponent } from './components/route-details/route-details.component';
 
 const routes: Routes = [
   {
@@ -32,7 +34,8 @@ const routes: Routes = [
       {path: 'settings', component: SettingsComponent},
       {path: 'login', component:LogInComponent},
       {path: 'register', component:CreateAccountComponent},
-      {path: 'forgotPassword', component:ForgotPasswordComponent}
+      {path: 'forgotPassword', component:ForgotPasswordComponent},
+      {path: 'routeDetails/:id', component:RouteDetailsComponent}
     ]
   }
 ];
@@ -50,7 +53,9 @@ const routes: Routes = [
     ProfileComponent,
     SettingsComponent,
     FriendsComponent,
-    FriendProfileBoxComponent
+    FriendProfileBoxComponent,
+    RouteListSingleRouteComponent,
+    RouteDetailsComponent
   ],
     imports: [
         BrowserModule,

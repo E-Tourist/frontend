@@ -1,0 +1,15 @@
+<div [routerLink]="['/routeDetails', route.id]" class="route-article">
+  <p class="route-name">{{route.name}} <span class="route-length">[{{route.distance}}km]</span></p>
+  <p class="route-score">
+    <a class="route-score-average gold">{{route.rating}}</a>
+    <i class="fa-solid fa-star gold"></i>
+    <i class="fa-solid fa-star gold"></i>
+    <i class="fa-solid fa-star gold"></i>
+    <i class="fa-solid fa-star gold"></i>
+    <i class="fa-solid fa-star"></i>
+  </p>
+  <p class="route-verified" *ngIf="route.isVerified">
+    <i class="fa-solid fa-circle-check"></i>
+  </p>
+  <img src="{{route.mainImageUrl}}" class="route-image" alt="route-image">
+</div>

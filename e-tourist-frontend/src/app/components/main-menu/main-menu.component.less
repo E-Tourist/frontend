@@ -1,4 +1,4 @@
-@import 'src/colors.less';
+@import '/src/colors.less';
 
 header {
   background-color: @theme-dark-blue;
@@ -25,7 +25,6 @@ body:before{
 }
 
 button{
-  border: 5vw solid black;
   background: rgb(59,153,157);
   color:#fff;
   border:none;
@@ -61,6 +60,10 @@ button:after{
 button:hover:before,button:hover:after{
   width:100%;
   transition:800ms ease all;
+}
+
+#menu-body {
+  overflow: hidden;
 }
 
 /* Arrow menu styling
