@@ -12,16 +12,5 @@
 </div>
 
 <div class="routes-list">
-    <div class="route-article">
-        <p class="route-name">Route name <a class="route-length">[10km]</a></p>
-        <p class="route-score">
-            <a class="route-score-average gold">4.1</a>
-            <i class="fa-solid fa-star gold"></i>
-            <i class="fa-solid fa-star gold"></i>
-            <i class="fa-solid fa-star gold"></i>
-            <i class="fa-solid fa-star gold"></i>
-            <i class="fa-solid fa-star"></i>
-        </p>
-        <img src="assets/routes-list/route-image.png" class="route-image" alt="route-image">
-    </div>
+  <app-route-list-single-route *ngFor="let route of routesFound" [route]="route"></app-route-list-single-route>
 </div>
