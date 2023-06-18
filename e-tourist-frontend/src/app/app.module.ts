@@ -18,6 +18,8 @@ import { FriendsComponent } from './components/account/friends/friends.component
 import { FriendProfileBoxComponent } from './components/account/friend-profile-box/friend-profile-box.component';
 import { RouteListSingleRouteComponent } from './components/route-list-single-route/route-list-single-route.component';
 import { RouteDetailsComponent } from './components/route-details/route-details.component';
+import { CommentsComponent } from './components/comments/comments.component';
+import { RouteNavigationComponent } from './components/route-navigation/route-navigation.component';
 
 const routes: Routes = [
   {
@@ -29,13 +31,15 @@ const routes: Routes = [
     children: [
       {path: 'search', component: RoutesSearchComponent},
       {path: 'list', component: RoutesListComponent},
-      {path: 'profile', component: ProfileComponent},
-      {path: 'friends', component: FriendsComponent},
+      {path: 'profile/:id', component: ProfileComponent},
+      {path: 'friends/:id', component: FriendsComponent},
       {path: 'settings', component: SettingsComponent},
       {path: 'login', component:LogInComponent},
       {path: 'register', component:CreateAccountComponent},
       {path: 'forgotPassword', component:ForgotPasswordComponent},
-      {path: 'routeDetails/:id', component:RouteDetailsComponent}
+      {path: 'routeDetails/:id', component:RouteDetailsComponent},
+      {path: 'comments/:id', component:CommentsComponent},
+      {path: 'navigation/:id', component:RouteNavigationComponent}
     ]
   }
 ];
@@ -55,7 +59,9 @@ const routes: Routes = [
     FriendsComponent,
     FriendProfileBoxComponent,
     RouteListSingleRouteComponent,
-    RouteDetailsComponent
+    RouteDetailsComponent,
+    CommentsComponent,
+    RouteNavigationComponent
   ],
     imports: [
         BrowserModule,

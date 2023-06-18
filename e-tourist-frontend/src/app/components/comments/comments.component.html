@@ -1,0 +1,19 @@
+<h2 [routerLink]="['/routeDetails', routeComments.routeId]">{{routeComments.routeName}}</h2>
+
+<hr>
+
+<div *ngFor="let comment of routeComments.comments" class="comment">
+  <div class="comment-header">
+    <div [routerLink]="['/profile', comment.authorId]" class="comment-header-user">
+      <img [src]="comment.authorAvatarUrl" alt="user-avatar">
+      <span>{{comment.authorName}}</span>
+    </div>
+    <div>
+      {{comment.commentDate | date}}
+    </div>
+  </div>
+  <hr>
+  <div>
+    {{comment.content}}
+  </div>
+</div>
