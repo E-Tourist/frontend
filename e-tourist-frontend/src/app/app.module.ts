@@ -31,6 +31,7 @@ const routes: Routes = [
     children: [
       {path: 'search', component: RoutesSearchComponent},
       {path: 'list', component: RoutesListComponent},
+      {path: 'profile', component: ProfileComponent},
       {path: 'profile/:id', component: ProfileComponent},
       {path: 'friends/:id', component: FriendsComponent},
       {path: 'settings', component: SettingsComponent},
