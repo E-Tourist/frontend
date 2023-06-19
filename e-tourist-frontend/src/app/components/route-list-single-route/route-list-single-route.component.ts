@@ -4,7 +4,7 @@ import {RouteMinimumInfo} from "../../models/route-minimum-info";
 @Component({
   selector: 'app-route-list-single-route',
   templateUrl: './route-list-single-route.component.html',
-  styleUrls: ['./route-list-single-route.component.less'],
+  styleUrls: ['./route-list-single-route.component.less']
 })
 export class RouteListSingleRouteComponent {
   @Input()
