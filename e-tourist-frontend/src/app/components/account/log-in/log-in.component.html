@@ -22,10 +22,10 @@
   </div>
 
   <div id="log-in-oauth-buttons">
-    <button routerLink="/" (click)="logInWithOauth()">Zaloguj przy pomocy Google</button>
-    <button routerLink="/" (click)="logInWithOauth()">Facebook</button>
-    <button routerLink="/" (click)="logInWithOauth()">AppleID</button>
+    <button class="login-google" routerLink="/" (click)="logInWithOauth()"><i class="fa-brands fa-google"></i><a class="login-google-auth-text">Zaloguj przy pomocy Google</a></button>
+    <button class="login-apple" routerLink="/" (click)="logInWithOauth()"><i class="fa-brands fa-apple"></i></button>
+    <button class="login-fb" routerLink="/" (click)="logInWithOauth()"><i class="fa-brands fa-facebook"></i></button>
   </div>
 
-  <button (click)="logInWithCredentials()">Zaloguj</button>
+  <button class="login-btn" (click)="logInWithCredentials()">Zaloguj</button>
 </form>
