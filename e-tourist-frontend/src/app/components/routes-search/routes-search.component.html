@@ -1,1 +1,40 @@
-<p>search-component works!</p>
+<div class="search-page">
+  <div class="search-top-box">
+    <input type="text" placeholder="Wyszukaj miejsce" id="place-search-input" [(ngModel)]="searchInputValue">
+    <i class="fa-solid fa-magnifying-glass fa-xl search-icon" (click)="searchForPlace()"></i>
+  </div>
+
+  <div class="map-container">
+    <div class="map-frame">
+      <div id="map"></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide-in-container" *ngIf="searchResult.id > 0" [ngClass]="{'visible': isSlideInVisible}">
+  <div class="toggle-button">
+    <button (click)="toggleSlideIn()">Toggle</button>
+  </div>
+  <div class="slide-in-content">
+    <h3>{{searchResult.name}}</h3>
+    <img [src]="searchResult.pictureUrl" alt="place-image">
+    <div>
+      <div>
+        <div>
+          {{searchResult.type}}
+        </div>
+        <div>
+          {{searchResult.rating}}
+        </div>
+      </div>
+      <div>
+        <button>Znajdź powiązane trasy</button>
+      </div>
+    </div>
+    <hr>
+    <div>
+      {{searchResult.address}}
+    </div>
+  </div>
+</div>
+
