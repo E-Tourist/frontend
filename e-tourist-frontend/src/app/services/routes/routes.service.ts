@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {RouteMinimumInfo} from "../../models/route-minimum-info";
 import {RouteDetails} from "../../models/route-details";
 import {RouteComments} from "../../models/route-comments";
+import {RouteNavigation} from "../../models/route-navigation";
 
 @Injectable({
   providedIn: 'root'
@@ -75,6 +76,15 @@ export class RoutesService {
     };
 
     return route;
+  }
+
+  getRouteNavigation(routeId: number): RouteNavigation {
+    let routeNavigation: RouteNavigation = {
+      routePaths: [],
+      routePoints: []
+    };
+
+    return routeNavigation;
   }
 
   getRouteComments(routeId: number): RouteComments {

@@ -12,7 +12,7 @@
     Przeszedł: {{user.totalDistance}} km <br>
     W ostatnim miesiącu: {{user.currentMonthDistance}} km <br>
     Autor {{user.routesCreated}} tras <br>
-    <a routerLink="/friends">Znajomi</a>
+    <a [routerLink]="['/friends', userId]">Znajomi</a>
   </div>
 </div>
 
