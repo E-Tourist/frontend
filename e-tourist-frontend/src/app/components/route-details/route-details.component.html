@@ -1,9 +1,9 @@
 <h2>{{routeDetails.name}}</h2>
 
-<div id="main-images-box">
-  <button (click)="prevImage()">&lt;</button>
+<div class="main-images-box">
   <img [src]="currentImage" alt="main-image">
-  <button (click)="nextImage()">&gt;</button>
+  <button class="change_img_prev" (click)="prevImage()">&lt;</button>
+  <button class="change_img_next" (click)="nextImage()">&gt;</button>
 </div>
 
 <div class="route-rating-section">
@@ -17,29 +17,29 @@
   </div>
 </div>
 
-<div>
-  <div>
-    <div>
+<div class="route-stats-section">
+  <div class="route-distance">
+    <div class="route-stats-title">
       Długość trasy
     </div>
-    <div>
+    <div class="route-stats-icon">
       <i class="fa-solid fa-route"></i>
       {{routeDetails.distance}} km
     </div>
   </div>
-  <div>
-    <div>
+  <div class="route-time">
+    <div class="route-stats-title">
       Czas przejścia
     </div>
-    <div>
+    <div class="route-stats-icon">
       <i class="fa-solid fa-clock"></i>
       {{routeDetails.time}} h
     </div>
   </div>
 </div>
 
-<div *ngIf="routeDetails.isVerified"><i class="fa-solid fa-circle-check"></i>Zweryfikowana</div>
-<div [routerLink]="['/profile', routeDetails.authorId]">Autor: {{routeDetails.authorName}}</div>
+<div *ngIf="routeDetails.isVerified" class="route-stats-verified"><i class="fa-solid fa-circle-check"></i>Zweryfikowana</div>
+<div [routerLink]="['/profile', routeDetails.authorId]" class="route-stats-author">Autor: {{routeDetails.authorName}}</div>
 
 <hr>
 
