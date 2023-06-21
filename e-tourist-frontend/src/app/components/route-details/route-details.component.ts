@@ -11,7 +11,6 @@ import {ActivatedRoute} from "@angular/router";
 export class RouteDetailsComponent {
   id: number = 0;
   isDescriptionHidden: boolean = true;
-  currentImageIndex: number = 0;
 
   routeDetails: RouteDetails = {
     authorId: 0,
@@ -35,19 +34,7 @@ export class RouteDetailsComponent {
     })
   }
 
-  get currentImage(): string {
-    return this.routeDetails.mainImagesUrls[this.currentImageIndex];
-  }
-
   toggleDescription() {
     this.isDescriptionHidden = !this.isDescriptionHidden;
-  }
-
-  prevImage(): void {
-    this.currentImageIndex = (this.currentImageIndex - 1 + this.routeDetails.mainImagesUrls.length) % this.routeDetails.mainImagesUrls.length;
-  }
-
-  nextImage(): void {
-    this.currentImageIndex = (this.currentImageIndex + 1) % this.routeDetails.mainImagesUrls.length;
   }
 }

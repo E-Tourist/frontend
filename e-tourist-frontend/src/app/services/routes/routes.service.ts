@@ -80,8 +80,85 @@ export class RoutesService {
 
   getRouteNavigation(routeId: number): RouteNavigation {
     let routeNavigation: RouteNavigation = {
-      routePaths: [],
-      routePoints: []
+      routePaths: [
+        {
+          description: "Przechodzimy pomiędzy budynkami uczelni, zarówno ZUTu jak i innych znajdujących się w Szczecinie. Po przejściu przez bramę trafiamy do naszego pierwszego celu",
+          pictureUrls: ["assets/places/route-1-1.jpg", "assets/places/route-1-2.jpg"],
+          startPointId: 1,
+          endPointId: 2,
+        },
+        {
+          description: "Droga prowadzi ulicami miasta (nie idźcie ulicami tylko po chodniku), całkiem przyjemnie się idzie",
+          pictureUrls: ["assets/places/route-2-1.jpg"],
+          startPointId: 2,
+          endPointId: 3,
+        },
+        {
+          description: "Teraz czeka nas dłuuugi spacer, ale nie dość że nogi będą wyćwiczone to nasz ostatni punkt warto zobaczyć ;)",
+          pictureUrls: ["assets/places/route-3-1.jpg", "assets/places/route-3-2.jpg", "assets/places/route-3-3.jpg"],
+          startPointId: 3,
+          endPointId: 4,
+        }
+      ],
+      routePoints: [
+        {
+          description: "Trasę rozpoczynamy od Budynku 1 Wydziału Informatyki ZUT. Studiują tutaj studenci.",
+          pictureUrls: ["assets/places/zut.jpg"],
+          place: {
+            address: "Żołnierska 49, 71-210 Szczecin",
+            id: 1,
+            latitude: 53.44717630281187,
+            longitude: 14.491878454207477,
+            name: "Wydział Informatyki ZUT",
+            pictureUrl: "assets/places/zut.jpg",
+            rating: 4.1,
+            type: "Uczelnia"
+          }
+        },
+        {
+          description: "Trafiamy do popularnego w Szczecinie Kebaba \"Na Wernyhory\" - możemy tutaj zjeść, lub od razu iść dalej",
+          pictureUrls: ["assets/places/kebab-wernyhory.jpg"],
+          place: {
+            address: "Wernyhory 17, 71-240 Szczecin",
+            id: 2,
+            latitude: 53.449211664979224,
+            longitude: 14.496163597098201,
+            name: "Kebab \"Na Wernyhory\" Turecki",
+            pictureUrl: "assets/places/kebab-wernyhory.jpg",
+            rating: 4.2,
+            type: "Restauracja"
+          }
+        },
+        {
+          description: "Znajdujemy się pod Netto Areną - miejscem w którym organizowane są wydarzenia. Jest to doprawdy jedno z miejsc w Szczecinie",
+          pictureUrls: ["assets/places/netto-1.jpg", "assets/places/netto-2.jpg", "assets/places/netto-3.jpg", "assets/places/netto-4.jpg"],
+          place: {
+            address: "Władysława Szafera 3/5/7, 71-245 Szczecin",
+            id: 3,
+            latitude: 53.457682389864175,
+            longitude: 14.494752095784591,
+            name: "Netto Arena",
+            pictureUrl: "assets/places/netto-1.jpg",
+            rating: 4.4,
+            type: "Kompleks sportowy"
+          }
+        },
+        {
+          // 53.429812619693784, 14.565431247620376 WAŁY CHROBREGO
+          description: "Trasę kończymy na Wałach Chrobrego - Szczecińskiej promenadzie z 1902 roku, z widokiem na wodę i ścieżkami biegnącymi wśród słynnych budynków",
+          pictureUrls: ["assets/places/waly-1.jpg", "assets/places/waly-2.jpg", "assets/places/waly-3.jpg"],
+          place: {
+            address: "Wały Chrobrego, 71-899 Szczecin",
+            id: 4,
+            latitude: 53.429812619693784,
+            longitude: 14.565431247620376,
+            name: "Wały Chrobrego",
+            pictureUrl: "assets/places/waly-1.jpg",
+            rating: 4.7,
+            type: "Obiekt historyczny"
+          }
+        }
+      ]
     };
 
     return routeNavigation;

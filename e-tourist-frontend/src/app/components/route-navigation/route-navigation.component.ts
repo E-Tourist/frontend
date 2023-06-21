@@ -45,7 +45,7 @@ export class RouteNavigationComponent {
       this.isShowingPoint = false;
       this.currentPointId += 1;
 
-      if (this.currentPointId >= this.routeNavigation.routePoints.length) {
+      if (this.currentPointId == this.routeNavigation.routePoints.length - 1) {
         this.isLastPoint = true;
       }
     }

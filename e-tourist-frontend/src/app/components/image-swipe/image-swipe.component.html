@@ -1,0 +1,5 @@
+<div id="main-images-box">
+  <button (click)="prevImage()" *ngIf="imageUrls.length > 1">&lt;</button>
+  <img [src]="currentImage" alt="main-image">
+  <button (click)="nextImage()" *ngIf="imageUrls.length > 1">&gt;</button>
+</div>

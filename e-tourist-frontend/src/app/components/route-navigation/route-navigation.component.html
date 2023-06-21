@@ -1,2 +1,19 @@
-<p>route-navigation works!</p>
-{{id}}
+<div class="navigation-page">
+  <div *ngIf="isShowingPoint">
+    <app-image-swipe [imageUrls]="routeNavigation.routePoints[currentPointId].pictureUrls"></app-image-swipe>
+    {{ routeNavigation.routePoints[currentPointId].description }}
+  </div>
+
+  <div *ngIf="!isShowingPoint">
+    <app-image-swipe [imageUrls]="routeNavigation.routePaths[currentPathId].pictureUrls"></app-image-swipe>
+    {{ routeNavigation.routePaths[currentPathId].description }}
+  </div>
+
+  <h3 *ngIf="!(isLastPoint && isShowingPoint)">
+    Następny punkt:
+    {{ isShowingPoint ? routeNavigation.routePoints[currentPointId + 1].place.name : routeNavigation.routePoints[currentPointId].place.name }}
+  </h3>
+
+  <button (click)="goToNext()" *ngIf="!(isShowingPoint && isLastPoint)">Idź dalej</button>
+  <button *ngIf="isLastPoint && isShowingPoint" [routerLink]="['/routeDetails', id]">Zakończ trasę</button>
+</div>
