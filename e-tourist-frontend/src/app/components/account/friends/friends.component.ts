@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {UserService} from "../../../services/user/user.service";
 import {User} from "../../../models/user";
+import {ActivatedRoute} from "@angular/router";
+import {AuthService} from "../../../services/auth/auth.service";
 
 @Component({
   selector: 'app-friends',
@@ -8,7 +10,9 @@ import {User} from "../../../models/user";
   styleUrls: ['./friends.component.less']
 })
 export class FriendsComponent {
-  constructor(private userService: UserService) {
+  userId: number = 0;
+
+  constructor(private userService: UserService, private route: ActivatedRoute, private authService: AuthService) {
   }
 
   howLongWithUs: number = 0;
@@ -27,7 +31,12 @@ export class FriendsComponent {
   friends: User[] = [];
 
   ngOnInit() {
-    this.user = this.userService.getUserById(1);
-    this.friends = this.userService.getUserFriends(1);
+    this.route.params.subscribe(params => {
+      this.userId = params['id'] ? params['id'] : this.authService.getLoggedUserId();
+      this.user = this.userService.getUserById(this.userId);
+    })
+
+    this.user = this.userService.getUserById(this.userId);
+    this.friends = this.userService.getUserFriends(this.userId);
   }
 }

@@ -1,10 +1,6 @@
 <h2>{{routeDetails.name}}</h2>
 
-<div class="main-images-box">
-  <button class="change-img-prev" (click)="prevImage()">&lt;</button>
-  <button class="change-img-next" (click)="nextImage()">&gt;</button>
-  <img class="route-img" [src]="currentImage" alt="main-image">
-</div>
+<app-image-swipe [imageUrls]="routeDetails.mainImagesUrls"></app-image-swipe>
 
 <div class="route-rating-section">
   <div class="route-score">

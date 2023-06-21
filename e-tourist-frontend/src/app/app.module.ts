@@ -20,6 +20,7 @@ import { RouteListSingleRouteComponent } from './components/route-list-single-ro
 import { RouteDetailsComponent } from './components/route-details/route-details.component';
 import { CommentsComponent } from './components/comments/comments.component';
 import { RouteNavigationComponent } from './components/route-navigation/route-navigation.component';
+import { ImageSwipeComponent } from './components/image-swipe/image-swipe.component';
 
 const routes: Routes = [
   {
@@ -63,7 +64,8 @@ const routes: Routes = [
     RouteListSingleRouteComponent,
     RouteDetailsComponent,
     CommentsComponent,
-    RouteNavigationComponent
+    RouteNavigationComponent,
+    ImageSwipeComponent
   ],
   imports: [
     BrowserModule,
