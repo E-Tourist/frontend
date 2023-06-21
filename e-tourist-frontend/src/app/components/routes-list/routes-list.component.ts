@@ -6,7 +6,7 @@ import {ActivatedRoute} from "@angular/router";
 @Component({
   selector: 'app-routes-list',
   templateUrl: './routes-list.component.html',
-  styleUrls: ['./routes-list.component.less']
+  styleUrls: ['./routes-list.component.less'],
 })
 export class RoutesListComponent {
   routesFound: RouteMinimumInfo[] = [];
