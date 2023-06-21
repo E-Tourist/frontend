@@ -1,9 +1,9 @@
 <h2>{{routeDetails.name}}</h2>
 
-<div id="main-images-box">
-  <button (click)="prevImage()">&lt;</button>
-  <img [src]="currentImage" alt="main-image">
-  <button (click)="nextImage()">&gt;</button>
+<div class="main-images-box">
+  <button class="change-img-prev" (click)="prevImage()">&lt;</button>
+  <button class="change-img-next" (click)="nextImage()">&gt;</button>
+  <img class="route-img" [src]="currentImage" alt="main-image">
 </div>
 
 <div class="route-rating-section">
@@ -17,41 +17,41 @@
   </div>
 </div>
 
-<div>
-  <div>
-    <div>
+<div class="route-stats-section">
+  <div class="route-distance">
+    <div class="route-stats-title">
       Długość trasy
     </div>
-    <div>
+    <div class="route-stats-icon">
       <i class="fa-solid fa-route"></i>
       {{routeDetails.distance}} km
     </div>
   </div>
-  <div>
-    <div>
+  <div class="route-time">
+    <div class="route-stats-title">
       Czas przejścia
     </div>
-    <div>
+    <div class="route-stats-icon">
       <i class="fa-solid fa-clock"></i>
       {{routeDetails.time}} h
     </div>
   </div>
 </div>
 
-<div *ngIf="routeDetails.isVerified"><i class="fa-solid fa-circle-check"></i>Zweryfikowana</div>
-<div [routerLink]="['/profile', routeDetails.authorId]">Autor: {{routeDetails.authorName}}</div>
+<div *ngIf="routeDetails.isVerified" class="route-stats-verified"><i class="fa-solid fa-circle-check"></i>Zweryfikowana</div>
+
+<button class="comments-btn" [routerLink]="['/comments', routeDetails.id]">Komentarze</button>
+<div [routerLink]="['/profile', routeDetails.authorId]" class="route-stats-author">Autor: {{routeDetails.authorName}}</div>
 
 <hr>
 
-<h3>Opis</h3>
-<div>
-  <div [ngClass]="{'collapsed': isDescriptionHidden}">
+<div class="route-description">
+  <h3>Opis</h3>
+  <div class="route-description-content" [ngClass]="{'collapsed': isDescriptionHidden}">
     {{routeDetails.description}}
   </div>
 
-  <button (click)="toggleDescription()">{{ isDescriptionHidden ? 'Wyświetl cały opis' : 'Schowaj opis'}}</button>
+  <button class="route-description-show-btn" (click)="toggleDescription()">{{ isDescriptionHidden ? 'Wyświetl cały opis' : 'Schowaj opis'}}</button>
 </div>
 
-<button [routerLink]="['/comments', routeDetails.id]">Komentarze</button> <br>
-
-<button [routerLink]="['/navigation', routeDetails.id]">Rozpocznij trasę</button>
+<button class="start-btn" [routerLink]="['/navigation', routeDetails.id]">Rozpocznij trasę</button>
