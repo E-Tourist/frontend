@@ -12,7 +12,7 @@ import { RoutesSearchComponent } from './components/routes-search/routes-search.
 import { RoutesListComponent } from './components/routes-list/routes-list.component';
 import { ProfileComponent } from './components/account/profile/profile.component';
 import {NgOptimizedImage} from "@angular/common";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { SettingsComponent } from './components/account/settings/settings.component';
 import { FriendsComponent } from './components/account/friends/friends.component';
 import { FriendProfileBoxComponent } from './components/account/friend-profile-box/friend-profile-box.component';
@@ -31,6 +31,7 @@ const routes: Routes = [
     children: [
       {path: 'search', component: RoutesSearchComponent},
       {path: 'list', component: RoutesListComponent},
+      {path: 'list/byPlace/:placeId', component: RoutesListComponent},
       {path: 'profile', component: ProfileComponent},
       {path: 'profile/:id', component: ProfileComponent},
       {path: 'friends/:id', component: FriendsComponent},
@@ -64,14 +65,15 @@ const routes: Routes = [
     CommentsComponent,
     RouteNavigationComponent
   ],
-    imports: [
-        BrowserModule,
-        RouterOutlet,
-        RouterLink,
-        RouterModule.forRoot(routes),
-        NgOptimizedImage,
-        ReactiveFormsModule
-    ],
+  imports: [
+    BrowserModule,
+    RouterOutlet,
+    RouterLink,
+    RouterModule.forRoot(routes),
+    NgOptimizedImage,
+    ReactiveFormsModule,
+    FormsModule
+  ],
   exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
