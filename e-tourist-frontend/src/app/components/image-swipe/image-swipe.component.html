@@ -1,5 +1,5 @@
-<div id="main-images-box">
-  <button (click)="prevImage()" *ngIf="imageUrls.length > 1">&lt;</button>
-  <img [src]="currentImage" alt="main-image">
-  <button (click)="nextImage()" *ngIf="imageUrls.length > 1">&gt;</button>
+<div class="main-images-box">
+  <button *ngIf="imageUrls.length > 1" class="change-img-prev" (click)="prevImage()">&lt;</button>
+  <button *ngIf="imageUrls.length > 1" class="change-img-next" (click)="nextImage()">&gt;</button>
+  <img class="route-img" [src]="currentImage" alt="main-image">
 </div>
