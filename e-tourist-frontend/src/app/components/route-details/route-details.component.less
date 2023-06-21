@@ -3,6 +3,7 @@
 .main-images-box{
   position: relative;
   width: 100%;
+  height: 30%;
 }
 
 h2{
@@ -21,7 +22,7 @@ h2{
 
 .main-images-box img {
   width: 100%;
-  height: 100%;
+  height: 100% !important;
 }
 
 .main-images-box button {
@@ -32,19 +33,19 @@ h2{
   font-size: 8vw;
   border: none;
   cursor: pointer;
-  height: 100%;
+  height: 100% !important;
   width: 12.5%;
   padding: 0;
 }
 
-.main-images-box .change_img_prev {
+.main-images-box .change-img-prev {
   top: 50%;
   left: 5%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
 
-.main-images-box .change_img_next {
+.main-images-box .change-img-next {
   top: 50%;
   left: 95%;
   transform: translate(-50%, -50%);
@@ -106,7 +107,7 @@ h2{
   width: 100%;
   color: rgb(115, 173, 115);
   text-align: center;
-  font-size: 10vw;
+  font-size: 8vw;
   margin-top: 3vw;
   margin-bottom: 3vw;
   float: left;
@@ -114,10 +115,11 @@ h2{
 
 .route-stats-author{
   color: @theme-orange;
-  width: 100%;
+  width: 40%;
   font-size: 4vw;
-  float: left;
-  text-align: right;
+  float: right;
+  text-align: center;
+  padding: 1vw;
 }
 
 hr{
@@ -127,4 +129,62 @@ hr{
   margin-top: 3vw;
   margin-bottom: 3vw;
   background-color: @theme-orange;;
+}
+
+h3{
+  color: @theme-light-yellow;
+  width: 90%;
+  font-size: 5vw;
+}
+
+.route-description{
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  display: flex;
+}
+
+.route-description-content{
+  width: 90%;
+  color: white;
+  margin-bottom: 2vw;
+}
+
+.route-description-show-btn{
+  width: 100%;
+  background-color: @theme-light-blue;
+  border: none;
+  cursor: pointer;
+  color: white;
+  padding: 2vw;
+  font-size: 4vw;
+  font-weight: bold;
+}
+
+.comments-btn{
+  float: left;
+  width: 40%;
+  font-size: 4vw;
+  font-weight: bold;
+  color: white;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  border: none;
+  background-color: @theme-light-blue;
+  border-radius: 5vw;
+  padding: 1vw;
+  cursor: pointer;
+}
+
+.start-btn{
+  font-size: 7vw;
+  font-weight: bold;
+  background-color: #A7BE94;
+  width: 80%;
+  margin: 10%;
+  padding: 5%;
+  border: none;
+  border-radius: 5vw;
+  color: white;
+  cursor: pointer;
 }
