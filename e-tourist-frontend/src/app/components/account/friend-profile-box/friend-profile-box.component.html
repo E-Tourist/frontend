@@ -1,12 +1,14 @@
 <div class="friend-profile-box">
   <div class="friend-profile-details">
-    <img src="{{user.avatarUrl}}}" alt="avatar">
+    <img src="{{user.avatarUrl}}}" alt="avatar" class="link" [routerLink]="['/profile', user.userId]">
     <div>
-      <a routerLink="/profile">{{user.userName}}</a><br>
-      <span>z nami od {{howLongWithUs}} lat</span><br>
-      <span *ngIf="user.routesCreated > 0">autor {{user.routesCreated}} tras</span><br *ngIf="user.routesCreated > 0">
-      <span>Przeszedł: {{user.totalDistance}} km </span> <br>
-      <span>W ostatnim miesiącu: {{user.currentMonthDistance}} km </span>
+      <div [routerLink]="['/profile', user.userId]" class="user-name link">{{user.userName}}</div>
+      <div class="user-info">
+        <div>z nami od {{howLongWithUs}} lat</div>
+        <div *ngIf="user.routesCreated > 0">autor {{user.routesCreated}} tras</div>
+        <div>Przeszedł: {{user.totalDistance}} km </div>
+        <div>W ostatnim miesiącu: {{user.currentMonthDistance}} km </div>
+      </div>
     </div>
   </div>
 </div>

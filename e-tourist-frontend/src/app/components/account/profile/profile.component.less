@@ -1,7 +1,11 @@
+@import "/src/colors";
+
 #main-profile-box {
-  border: 1px solid black;
+  margin: 10px;
   border-radius: 20px;
-  padding: 5px;
+  padding: 10px;
+  color: @theme-light-yellow;
+  background-color: @theme-light-blue;
 }
 
 #main-profile-details {
@@ -9,9 +13,42 @@
   justify-content: space-between;
 }
 
+#main-profile-statistics {
+  margin: 5px;
+  font-weight: bold;
+}
+
 img {
   height: 128px;
   width: 128px;
   border-radius: 100%;
   margin-right: 10px;
+}
+
+.main-user-name {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.main-user-account-time {
+  font-weight: bold;
+}
+
+.main-user-description {
+  color: white;
+  font-size: 0.825rem;
+}
+
+#friends-link:hover {
+  cursor: pointer;
+}
+
+h3 {
+  margin-left: 10px;
+  color: @theme-light-yellow;
+}
+
+.profile-last-activity {
+  margin: 10px;
 }

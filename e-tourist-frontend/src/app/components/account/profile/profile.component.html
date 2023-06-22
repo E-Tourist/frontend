@@ -2,9 +2,9 @@
   <div id="main-profile-details">
     <img src="{{user.avatarUrl}}}" alt="avatar">
     <div>
-      <span>{{user.userName}}</span><br>
-      <span>z nami od {{howLongWithUs}} lat</span><br>
-      <span>{{user.description}}</span>
+      <div class="main-user-name">{{user.userName}}</div>
+      <div class="main-user-account-time">z nami od {{howLongWithUs}} lat</div>
+      <div class="main-user-description">{{user.description}}</div>
     </div>
   </div>
 
@@ -12,12 +12,12 @@
     Przeszedł: {{user.totalDistance}} km <br>
     W ostatnim miesiącu: {{user.currentMonthDistance}} km <br>
     Autor {{user.routesCreated}} tras <br>
-    <a [routerLink]="['/friends', userId]">Znajomi</a>
+    <span [routerLink]="['/friends', userId]" id="friends-link">Znajomi</span>
   </div>
 </div>
 
 <h3>Ostatnia aktywność:</h3>
 
 <div class="profile-last-activity">
-
+  <app-route-list-single-route [route]="route" *ngFor="let route of lastActivityRoutes"></app-route-list-single-route>
 </div>

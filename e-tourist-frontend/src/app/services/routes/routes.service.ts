@@ -61,6 +61,15 @@ export class RoutesService {
     return routes;
   }
 
+  getUserLastActivity(userId: number): RouteMinimumInfo[] {
+    let routes: RouteMinimumInfo[] = [
+      this.mockRoutes[0],
+      this.mockRoutes[3]
+    ];
+
+    return routes;
+  }
+
   getRouteDetails(routeId: number): RouteDetails {
     let route: RouteDetails = {
       authorId: 1,
