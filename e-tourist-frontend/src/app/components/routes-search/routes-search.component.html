@@ -13,26 +13,27 @@
 
 <div class="slide-in-container" *ngIf="searchResult.id > 0" [ngClass]="{'visible': isSlideInVisible}">
   <div class="toggle-button">
-    <button (click)="toggleSlideIn()">Toggle</button>
+    <button (click)="toggleSlideIn()"> {{ isSlideInVisible ? '&darr;' : '&uarr;' }} </button>
   </div>
-  <div class="slide-in-content">
+  <div class="slide-in-header">
     <h3>{{searchResult.name}}</h3>
+  </div>
+  <div class="slide-in-content" [ngClass]="{'visible': isSlideInVisible}">
     <img [src]="searchResult.pictureUrl" alt="place-image">
-    <div>
-      <div>
+    <div class="slide-in-info">
+      <div class="slide-in-type-rating">
         <div>
           {{searchResult.type}}
         </div>
-        <div>
-          {{searchResult.rating}}
+        <div class="star-rating">
+          <app-star-rating [rating]="searchResult.rating"></app-star-rating>
         </div>
       </div>
       <div>
         <button [routerLink]="['/list/byPlace', searchResult.id]">Znajdź powiązane trasy</button>
       </div>
     </div>
-    <hr>
-    <div>
+    <div class="slide-in-address">
       {{searchResult.address}}
     </div>
   </div>
