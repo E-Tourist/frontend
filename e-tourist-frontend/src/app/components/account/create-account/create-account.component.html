@@ -1,11 +1,11 @@
 <div id="create-account-header">
   <div id="create-account-welcome-box">
-    Witaj w <span class="create-account-blue-font">E-Turysta</span> <br>
-    <span id="create-account-bigger-text">Zarejestruj się</span>
+    Witaj w <span class="create-account-yellow-font">E-Turysta</span>!<br>
+    <span id="create-account-bigger-text">Zarejestruj się!</span>
   </div>
   <div id="create-account-log-in-box">
     Masz już konto? <br>
-    <a routerLink="/login">Zaloguj się!</a>
+    <div routerLink="/login" class="create-account-yellow-font link">Zaloguj się!</div>
   </div>
 </div>
 
@@ -25,5 +25,7 @@
     <input type="password" id="create-account-password-input">
   </div>
 
-  <button routerLink="/login">Zarejestruj</button>
+  <div class="button-div">
+    <button routerLink="/login">Zarejestruj</button>
+  </div>
 </form>
