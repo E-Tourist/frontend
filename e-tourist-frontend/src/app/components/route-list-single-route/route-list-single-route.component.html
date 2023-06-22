@@ -1,14 +1,7 @@
 <div [routerLink]="['/routeDetails', route.id]" class="route-article">
   <p class="route-name">{{route.name}} <span class="route-length">[{{route.distance}}km]</span></p>
-  <div>
-    <p class="route-score">
-      <a class="route-score-average gold">{{route.rating}}</a>
-      <i class="fa-solid fa-star" [ngClass]="route.rating > 0.5 ? 'gold' : ''"></i>
-      <i class="fa-solid fa-star" [ngClass]="route.rating > 1.5 ? 'gold' : ''"></i>
-      <i class="fa-solid fa-star" [ngClass]="route.rating > 2.5 ? 'gold' : ''"></i>
-      <i class="fa-solid fa-star" [ngClass]="route.rating > 3.5 ? 'gold' : ''"></i>
-      <i class="fa-solid fa-star" [ngClass]="route.rating > 4.5 ? 'gold' : ''"></i>
-    </p>
+  <div class="rating-and-verification">
+    <app-star-rating [rating]="route.rating"></app-star-rating>
     <p class="route-verified" *ngIf="route.isVerified">
       <i class="fa-solid fa-circle-check"></i>
     </p>

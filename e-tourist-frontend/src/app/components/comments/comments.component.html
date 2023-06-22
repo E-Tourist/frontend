@@ -1,6 +1,6 @@
-<h2 [routerLink]="['/routeDetails', routeComments.routeId]">{{routeComments.routeName}}</h2>
-
-<hr>
+<div class="comments-route-name">
+  <h2 [routerLink]="['/routeDetails', routeComments.routeId]">{{routeComments.routeName}}</h2>
+</div>
 
 <div *ngFor="let comment of routeComments.comments" class="comment">
   <div class="comment-header">
