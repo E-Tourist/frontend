@@ -21,6 +21,7 @@ import { RouteDetailsComponent } from './components/route-details/route-details.
 import { CommentsComponent } from './components/comments/comments.component';
 import { RouteNavigationComponent } from './components/route-navigation/route-navigation.component';
 import { ImageSwipeComponent } from './components/image-swipe/image-swipe.component';
+import { StarRatingComponent } from './components/star-rating/star-rating.component';
 
 const routes: Routes = [
   {
@@ -65,7 +66,8 @@ const routes: Routes = [
     RouteDetailsComponent,
     CommentsComponent,
     RouteNavigationComponent,
-    ImageSwipeComponent
+    ImageSwipeComponent,
+    StarRatingComponent
   ],
   imports: [
     BrowserModule,

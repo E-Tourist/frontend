@@ -1,0 +1,8 @@
+<p class="route-score">
+  <a class="route-score-average gold">{{rating}}</a>
+  <i class="fa-solid fa-star" [ngClass]="rating > 0.5 ? 'gold' : ''"></i>
+  <i class="fa-solid fa-star" [ngClass]="rating > 1.5 ? 'gold' : ''"></i>
+  <i class="fa-solid fa-star" [ngClass]="rating > 2.5 ? 'gold' : ''"></i>
+  <i class="fa-solid fa-star" [ngClass]="rating > 3.5 ? 'gold' : ''"></i>
+  <i class="fa-solid fa-star" [ngClass]="rating > 4.5 ? 'gold' : ''"></i>
+</p>

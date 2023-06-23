@@ -3,14 +3,7 @@
 <app-image-swipe [imageUrls]="routeDetails.mainImagesUrls"></app-image-swipe>
 
 <div class="route-rating-section">
-  <div class="route-score">
-    <i class="fa-solid fa-star" [ngClass]="routeDetails.rating > 0.5 ? 'gold' : ''"></i>
-    <i class="fa-solid fa-star" [ngClass]="routeDetails.rating > 1.5 ? 'gold' : ''"></i>
-    <i class="fa-solid fa-star" [ngClass]="routeDetails.rating > 2.5 ? 'gold' : ''"></i>
-    <i class="fa-solid fa-star" [ngClass]="routeDetails.rating > 3.5 ? 'gold' : ''"></i>
-    <i class="fa-solid fa-star" [ngClass]="routeDetails.rating > 4.5 ? 'gold' : ''"></i>
-    <a class="route-score-average gold">{{routeDetails.rating}}</a>
-  </div>
+  <app-star-rating [rating]="routeDetails.rating"></app-star-rating>
 </div>
 
 <div class="route-stats-section">
