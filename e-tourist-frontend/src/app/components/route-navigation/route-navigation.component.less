@@ -1,0 +1,142 @@
+@import '/src/colors.less';
+
+.navigation-page{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+}
+
+// Wysuwane menu
+.interactive-menu{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.interactive-menu-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 45px;
+    height: 10%;
+    width: 100%;
+    background-color: @theme-light-blue;
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 8vw 8vw 0 0;
+    color: @theme-light-yellow;
+    font-weight: bold;
+    font-size: 4.5vw;
+}
+
+.interactive-menu-header a{
+    width: 100%;
+    font-size: 3vw;
+    color: @theme-orange;
+}
+
+.button-menu {
+  border-radius: 50%;
+  position: absolute;
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  bottom: 14%;
+  cursor: pointer;
+  fill: none;
+  height: 8vw;
+  -webkit-tap-highlight-color: transparent;
+  width: 8vw;
+  font-size: 8vw;
+}
+
+.button-menu1:active .bg {
+  fill: #555;
+}
+
+.arrow {
+  color: white;
+  stroke-width: 2;
+  transition: stroke 300ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: 50%;
+}
+
+.interactive-menu.active .arrow {
+  transform: translateY(-200px) rotate(-180deg);
+}
+
+.active .interactive-menu-header {
+    transform: translateY(-180px);
+    padding-bottom: 5%;
+  }
+
+.interactive-menu-content {
+  background-blend-mode: screen;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  height: 192px;
+  position: absolute;
+  transform: translateY(192px);
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+}
+
+.route-point {
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  width: 100%;
+  height: 25%;
+}
+
+.route-point:nth-of-type(n) {
+    background-color: @theme-greenish-blue;
+}
+
+.route-point:nth-of-type(2n) {
+    background-color: @theme-light-blue;
+}
+
+.route-point:active::after {
+  background-color: #000;
+  content: " ";
+  opacity: 0.25;
+  height: 100%;
+  width: 100%;
+  overflow:auto;
+}
+
+.active .interactive-menu-content {
+  transform: translateY(0);
+  overflow: auto;
+  position: fixed;
+}
+
+.route-description{
+  width: 90%;
+  margin: 5%;
+  color: white;
+  font-size: 5vw;
+}
+
+.btn-change-point{
+  position: absolute;
+  bottom: 20%;
+  font-size: 7vw;
+  font-weight: bold;
+  background-color: @theme-greenish-blue;
+  width: 80%;
+  margin: 10%;
+  padding: 5%;
+  border: none;
+  border-radius: 5vw;
+  color: white;
+  cursor: pointer;
+}

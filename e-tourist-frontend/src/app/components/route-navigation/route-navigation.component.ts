@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {RouteNavigation} from "../../models/route-navigation";
 import {RoutesService} from "../../services/routes/routes.service";
@@ -22,10 +22,11 @@ export class RouteNavigationComponent {
   currentPointId: number = -1;
   currentPathId: number = -1;
 
-  constructor(private route: ActivatedRoute, private routesService: RoutesService) {
+  constructor(private route: ActivatedRoute, private routesService: RoutesService, private elementRef:ElementRef) {
   }
 
   ngOnInit() {
+ 
     this.route.params.subscribe(params => {
       this.id = params['id'];
       this.routeNavigation = this.routesService.getRouteNavigation(this.id);
@@ -33,6 +34,12 @@ export class RouteNavigationComponent {
 
     if (this.routeNavigation.routePoints.length <= 1 || this.routeNavigation.routePaths.length == 0) {
       return;
+    }
+
+    for (let point in this.routeNavigation.routePoints){
+      console.log('a')
+      var d1 = this.elementRef.nativeElement.querySelector('.interactive-menu-content');
+      d1.insertAdjacentHTML('beforeend', '<div class="route-point" *ngIf="isShowingPoint">'+this.routeNavigation.routePoints[point].place.name+'</div>');
     }
 
     this.isShowingPoint = true;

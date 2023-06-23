@@ -1,19 +1,28 @@
 <div class="navigation-page">
   <div *ngIf="isShowingPoint">
     <app-image-swipe [imageUrls]="routeNavigation.routePoints[currentPointId].pictureUrls"></app-image-swipe>
-    {{ routeNavigation.routePoints[currentPointId].description }}
+    <div class="route-description">
+      {{ routeNavigation.routePoints[currentPointId].description }}
+    </div>
   </div>
 
   <div *ngIf="!isShowingPoint">
     <app-image-swipe [imageUrls]="routeNavigation.routePaths[currentPathId].pictureUrls"></app-image-swipe>
-    {{ routeNavigation.routePaths[currentPathId].description }}
+    <div class="route-description">
+      {{ routeNavigation.routePaths[currentPathId].description }}
+    </div>
   </div>
 
-  <h3 *ngIf="!(isLastPoint && isShowingPoint)">
-    Następny punkt:
-    {{ isShowingPoint ? routeNavigation.routePoints[currentPointId + 1].place.name : routeNavigation.routePoints[currentPointId].place.name }}
-  </h3>
+  <button class="btn-change-point" (click)="goToNext()" *ngIf="!(isShowingPoint && isLastPoint)">Idź dalej</button>
+  <button class="btn-change-point" *ngIf="isLastPoint && isShowingPoint" [routerLink]="['/routeDetails', id]">Zakończ trasę</button>
 
-  <button (click)="goToNext()" *ngIf="!(isShowingPoint && isLastPoint)">Idź dalej</button>
-  <button *ngIf="isLastPoint && isShowingPoint" [routerLink]="['/routeDetails', id]">Zakończ trasę</button>
+  <div class="interactive-menu">
+      <div class="interactive-menu-header">
+        <span><a>Następny punkt:</a><br>
+        {{ isShowingPoint && !isLastPoint ? routeNavigation.routePoints[currentPointId + 1].place.name : routeNavigation.routePoints[currentPointId].place.name }}</span>
+      </div>
+      <i class="fa-solid fa-circle-arrow-up button-menu arrow " onclick="document.querySelector('.interactive-menu').classList.toggle('active'), document.querySelector('.button-menu').classList.toggle('fa-rotate-180')"></i>
+      <div class="interactive-menu-content">
+      </div>
+  </div>
 </div>
