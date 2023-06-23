@@ -19,7 +19,7 @@
   <div class="interactive-menu">
       <div class="interactive-menu-header">
         <span><a>Następny punkt:</a><br>
-        {{ isShowingPoint ? routeNavigation.routePoints[currentPointId + 1].place.name : routeNavigation.routePoints[currentPointId].place.name }}</span>
+        {{ isShowingPoint && !isLastPoint ? routeNavigation.routePoints[currentPointId + 1].place.name : routeNavigation.routePoints[currentPointId].place.name }}</span>
       </div>
       <i class="fa-solid fa-circle-arrow-up button-menu arrow " onclick="document.querySelector('.interactive-menu').classList.toggle('active'), document.querySelector('.button-menu').classList.toggle('fa-rotate-180')"></i>
       <div class="interactive-menu-content">
