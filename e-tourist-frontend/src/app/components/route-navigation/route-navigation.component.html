@@ -1,51 +1,28 @@
 <div class="navigation-page">
   <div *ngIf="isShowingPoint">
     <app-image-swipe [imageUrls]="routeNavigation.routePoints[currentPointId].pictureUrls"></app-image-swipe>
-    {{ routeNavigation.routePoints[currentPointId].description }}
+    <div class="route-description">
+      {{ routeNavigation.routePoints[currentPointId].description }}
+    </div>
   </div>
 
   <div *ngIf="!isShowingPoint">
     <app-image-swipe [imageUrls]="routeNavigation.routePaths[currentPathId].pictureUrls"></app-image-swipe>
-    {{ routeNavigation.routePaths[currentPathId].description }}
+    <div class="route-description">
+      {{ routeNavigation.routePaths[currentPathId].description }}
+    </div>
   </div>
 
-  <button (click)="goToNext()" *ngIf="!(isShowingPoint && isLastPoint)">Idź dalej</button>
-  <button *ngIf="isLastPoint && isShowingPoint" [routerLink]="['/routeDetails', id]">Zakończ trasę</button>
+  <button class="btn-change-point" (click)="goToNext()" *ngIf="!(isShowingPoint && isLastPoint)">Idź dalej</button>
+  <button class="btn-change-point" *ngIf="isLastPoint && isShowingPoint" [routerLink]="['/routeDetails', id]">Zakończ trasę</button>
 
   <div class="interactive-menu">
       <div class="interactive-menu-header">
-        <p>Następny punkt:</p>
-        {{ isShowingPoint ? routeNavigation.routePoints[currentPointId + 1].place.name : routeNavigation.routePoints[currentPointId].place.name }}
+        <span><a>Następny punkt:</a><br>
+        {{ isShowingPoint ? routeNavigation.routePoints[currentPointId + 1].place.name : routeNavigation.routePoints[currentPointId].place.name }}</span>
       </div>
-      <svg class="button-menu" height="16" width="16" viewBox="0 0 16 16" onclick="document.querySelector('.interactive-menu').classList.toggle('active')">
-        <circle class="arrow-background" r="12" cx="12" cy="12" />
-        <path class="arrow" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
-      </svg>
+      <i class="fa-solid fa-circle-arrow-up button-menu arrow " onclick="document.querySelector('.interactive-menu').classList.toggle('active'), document.querySelector('.button-menu').classList.toggle('fa-rotate-180')"></i>
       <div class="interactive-menu-content">
-        <div class="route-point ">
-          place holder
-        </div>
-        <div class="route-point">
-          
-        </div>
-        <div class="route-point">
-          
-        </div>
-        <div class="route-point">
-          
-        </div>
-        <div class="route-point">
-          
-        </div>
-        <div class="route-point">
-          
-        </div>
-        <div class="route-point">
-          
-        </div>
-        <div class="route-point">
-          
-        </div>
       </div>
   </div>
 </div>
